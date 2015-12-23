@@ -28,6 +28,12 @@ class ViewController: UIViewController {
         timer.invalidate()
     }
     
+    @IBAction func stopButton(sender: UIBarButtonItem) {
+        timer.invalidate()
+        count = 0
+        displayChronometer(count)
+    }
+    
     @IBAction func startButton(sender: UIBarButtonItem) {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("startChronometer"), userInfo: nil, repeats: true)
     }
